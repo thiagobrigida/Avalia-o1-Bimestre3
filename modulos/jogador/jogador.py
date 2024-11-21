@@ -26,3 +26,37 @@ def save():
     else:
         flash('Preencha todos os campos!')
         return redirect('/jogador/add')
+
+EDITAR
+@bp_time.route("/remove/<int:id>")
+def remove(id):
+    dados = Time.query.get(id)
+    if id > 0:
+        db.session.delete(dados)
+        db.session.commit()
+        flash('Time removido com sucesso!')
+        return redirect("/time")
+    else:
+        flash("Caminho incorreto!")
+        return redirect("/time")
+
+@bp_time.route("/edita/<int:id>")
+def edita(id):
+    time = Time.query.get(id)
+    return render_template("time_edita.html", dados=time)
+
+@bp_time.route("/editasave", methods=['POST'])
+def editasave():
+    id = request.form.get('id')
+    nome = request.form.get('nome')
+    cidade = request.form.get('cidade')
+    if id and nome and cidade:
+        jogador = Time.query.get(id)
+        jogador.nome = nome
+        jogador.cidade = cidade
+        db.session.commit()
+        flash('Dados atualizados com sucesso!')
+        return redirect('/time')
+    else:
+        flash('Dados incompletos.')
+        return redirect("/time")

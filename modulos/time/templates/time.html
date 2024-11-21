@@ -17,12 +17,16 @@
             <th>Nome do jogador</th>
             <th>Nome do time</th>
             <th>Cidade</th>
+            <th>Edita</th>
+            <th>Remove</th>
         </tr>
         {% for u in dados %}
         <tr>
             <td>{{u.jogador.nome}}</td>
             <td>{{u.nome}}</td>
             <td>{{u.cidade}}</td>
+            <td><a href="/times/edita/{{p.id}}">Editar</a></td>
+            <td><a href="/times/remove/{{p.id}}">Remover</a></td>
         </tr>
         {% endfor %}
     </table>
