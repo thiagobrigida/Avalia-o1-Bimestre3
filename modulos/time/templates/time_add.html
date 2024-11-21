@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div class="message">
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="/time/save" method="post">
+        <div>
+            <label for="nome">Jogador: </label>
+            <select name="jogador_id" id="nome">
+                <option value=""></option>
+                {% for j in jogador %}
+                <option value="{{j.id}}">{{j.nome}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="nome">Nome do Time: </label>
+            <input type="text" name="nome" id="nome">
+        </div>
+        <div>
+            <label for="cidade">Cidade: </label>
+            <input type="text" name="cidade" id="cidade">
+        </div>
+        <button type="submit">Salvar</button>
+    </form>
+
+{% endblock %}

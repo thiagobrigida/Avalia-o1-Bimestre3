@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogadores e Times</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/estilo.css')}}">
+</head>
+<body>
+    <header>
+        <img src="../static/img/bola.jpg" alt="bola">
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/jogador">Jogador</a>
+                </li>
+                <li>
+                    <a href="/time">Time</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+    <footer>
+        {% block conteudo %}
+        {% endblock %}
+    </footer>
+</body>
+</html>
