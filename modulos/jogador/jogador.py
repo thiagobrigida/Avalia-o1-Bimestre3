@@ -27,36 +27,35 @@ def save():
         flash('Preencha todos os campos!')
         return redirect('/jogador/add')
 
-EDITAR
-@bp_time.route("/remove/<int:id>")
+@bp_jogador.route("/remove/<int:id>")
 def remove(id):
-    dados = Time.query.get(id)
+    dados = Jogador.query.get(id)
     if id > 0:
         db.session.delete(dados)
         db.session.commit()
         flash('Time removido com sucesso!')
-        return redirect("/time")
+        return redirect("/jogador")
     else:
         flash("Caminho incorreto!")
-        return redirect("/time")
+        return redirect("/jogador")
 
-@bp_time.route("/edita/<int:id>")
+@bp_jogador.route("/edita/<int:id>")
 def edita(id):
-    time = Time.query.get(id)
-    return render_template("time_edita.html", dados=time)
+    jogador = Jogador.query.get(id)
+    return render_template("jogador_edita.html", dados=jogador)
 
-@bp_time.route("/editasave", methods=['POST'])
+@bp_jogador.route("/editasave", methods=['POST'])
 def editasave():
     id = request.form.get('id')
     nome = request.form.get('nome')
-    cidade = request.form.get('cidade')
-    if id and nome and cidade:
-        jogador = Time.query.get(id)
-        jogador.nome = nome
-        jogador.cidade = cidade
+    posicao = request.form.get('posicao')
+    if id and nome and posicao:
+        time = Jogador.query.get(id)
+        time.nome = nome
+        time.posicao = posicao
         db.session.commit()
         flash('Dados atualizados com sucesso!')
-        return redirect('/time')
+        return redirect('/jogador')
     else:
         flash('Dados incompletos.')
-        return redirect("/time")
+        return redirect("/jogador")
