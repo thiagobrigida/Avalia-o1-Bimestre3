@@ -33,7 +33,7 @@ def remove(id):
     if id > 0:
         db.session.delete(dados)
         db.session.commit()
-        flash('Time removido com sucesso!')
+        flash('Jogador removido com sucesso!')
         return redirect("/jogador")
     else:
         flash("Caminho incorreto!")

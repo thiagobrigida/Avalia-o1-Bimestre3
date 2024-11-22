@@ -16,11 +16,15 @@
         <tr>
             <th>Nome</th>
             <th>Posicao</th>
+            <th>Edita</th>
+            <th>Remove</th>
         </tr>
-        {% for u in dados %}
+        {% for j in dados %}
         <tr>
-            <td>{{u.nome}}</td>
-            <td>{{u.posicao}}</td>
+            <th>{{j.nome}}</th>
+            <th>{{j.posicao}}</th>
+            <th><a href="/jogador/edita/{{j.id}}">Editar</a></th>
+            <th><a href="/jogador/remove/{{j.id}}">Remover</a></th>
         </tr>
         {% endfor %}
     </table>

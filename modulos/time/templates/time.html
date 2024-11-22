@@ -22,11 +22,11 @@
         </tr>
         {% for u in dados %}
         <tr>
-            <td>{{u.jogador.nome}}</td>
-            <td>{{u.nome}}</td>
-            <td>{{u.cidade}}</td>
-            <td><a href="/times/edita/{{p.id}}">Editar</a></td>
-            <td><a href="/times/remove/{{p.id}}">Remover</a></td>
+            <th>{{u.jogador.nome}}</th>
+            <th>{{u.nome}}</th>
+            <th>{{u.cidade}}</th>
+            <th><a href="/time/edita/{{u.id}}">Editar</a></th>
+            <th><a href="/time/remove/{{u.id}}">Remover</a></th>
         </tr>
         {% endfor %}
     </table>
@@ -35,3 +35,4 @@
 {% block rodape %}
     &copy; left
 {% endblock %}
+

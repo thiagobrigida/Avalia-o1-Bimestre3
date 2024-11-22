@@ -32,24 +32,18 @@ header img{
     display: flex;
 }
 
+nav ul li a {
+    justify-content: space-between;
+    padding: 14px 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #06285c;
+}
 main {
     background-color: var(--primary);
-}
-
-
-
-.stanley {
-    background-color: var(--black);
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.stanley img {
-    width: 12rem;
-    align-items: center;
-    justify-content: center;
-    display: flex;
 }
 
 body {
@@ -60,4 +54,15 @@ body {
 table, tr, th{
     border: 2px solid black;
     border-collapse: collapse;
+}
+
+tr, th {
+    padding: 4px;
+}
+
+footer{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 5rem;
 }
