@@ -10,21 +10,17 @@
         {% endfor %}
     {% endif %}
     <div>
-        <a href="/jogador/add">Adicionar</a>
+        <a href="/cliente/add">Adicionar</a>
     </div>
     <table>
         <tr>
             <th>Nome</th>
-            <th>Posicao</th>
-            <th>Edita</th>
-            <th>Remove</th>
+            <th>Telefone</th>
         </tr>
-        {% for j in dados %}
+        {% for c in dados %}
         <tr>
-            <th>{{j.nome}}</th>
-            <th>{{j.posicao}}</th>
-            <th><a href="/jogador/edita/{{j.id}}">Editar</a></th>
-            <th><a href="/jogador/remove/{{j.id}}">Remover</a></th>
+            <th>{{c.nome}}</th>
+            <th>{{c.telefone}}</th>
         </tr>
         {% endfor %}
     </table>

@@ -1,4 +1,4 @@
-#!/var/www/Jogadores_Times/.venv/bin/python
+#!/var/www/avaliacao_ThiagoBrigida/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

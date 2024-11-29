@@ -9,14 +9,14 @@
             </div>
         {% endfor %}
     {% endif %}
-    <form action="/jogador/save" method="post">
+    <form action="/cliente/save" method="post">
         <div>
-            <label for="nome">Nome do jogador: </label>
+            <label for="nome">Nome: </label>
             <input type="text" name="nome" id="nome">
         </div>
         <div>
-            <label for="posicao">Posição: </label>
-            <input type="text" name="posicao" id="posicao">
+            <label for="telefone">Telefone: </label>
+            <input type="text" name="telefone" id="telefone">
         </div>
         <button type="submit">Salvar</button>
     </form>

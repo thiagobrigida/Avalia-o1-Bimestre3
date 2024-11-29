@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div class="message">
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="/reclamacao/save" method="post">
+        <div>
+            <label for="descricao">Descrição: </label>
+            <input type="text" name="descricao" id="descricao">
+        </div>
+        <div>
+            <label for="data">Data: </label>
+            <input type="date" name="data" id="data">
+        </div>
+        <div>
+            <label for="nome">Cliente: </label>
+            <select name="cliente_id" id="nome">
+                <option value=""></option>
+                {% for c in cliente %}
+                <option value="{{c.id}}">{{c.nome}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit">Salvar</button>
+    </form>
+
+{% endblock %}

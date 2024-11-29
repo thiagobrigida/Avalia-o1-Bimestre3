@@ -10,23 +10,21 @@
         {% endfor %}
     {% endif %}
     <div>
-        <a href="/time/add">Adicionar</a>
+        <a href="/reclamacao/add">Adicionar</a>
     </div>
     <table>
         <tr>
-            <th>Nome do jogador</th>
-            <th>Nome do time</th>
-            <th>Cidade</th>
-            <th>Edita</th>
-            <th>Remove</th>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Cliente</th>
+            <th>Remover</th>
         </tr>
         {% for u in dados %}
         <tr>
-            <th>{{u.jogador.nome}}</th>
-            <th>{{u.nome}}</th>
-            <th>{{u.cidade}}</th>
-            <th><a href="/time/edita/{{u.id}}">Editar</a></th>
-            <th><a href="/time/remove/{{u.id}}">Remover</a></th>
+            <th>{{u.descricao}}</th>
+            <th>{{u.data}}</th>
+            <th>{{u.cliente.nome}}</th>
+            <th><a href="/reclamacao/remove/{{u.id}}">Remover</a></th>
         </tr>
         {% endfor %}
     </table>
